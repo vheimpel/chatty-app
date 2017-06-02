@@ -55,8 +55,6 @@ onSubmit = (message) => {
   console.log("message from onSubmit in app.js:", message)
   this.setState({currentUser: {name: message.username}})
   const newMessage = {id: this.state.messages.length + 1, username: message.username, content: message.content};
-  // const messages = this.state.messages.concat(newMessage)
-  // this.setState({messages: messages})
   this.socket.send(JSON.stringify(message))
 }
 
@@ -67,7 +65,7 @@ onSubmitName = (message) => {
 
 changeName = (unam) => {
   unam.username = this.state.currentUser.name
-  if (this.state.currentUser.name !== unam.newUsername) {
+  if (this.state.currentUser.name !== unam.newUsername) { // Checks if the old and new usernames are different
     this.setState({currentUser: {name: unam.newUsername}})
     this.socket.send(JSON.stringify(unam))
   } else {
@@ -76,9 +74,6 @@ changeName = (unam) => {
 }
 
   render() {
-    console.log("this.state.messages from render in app:", this.state.messages)
-    console.log("this.state.currentUser from render in app:", this.state.currentUser)
-    console.log("this.state.currentUser.name from render in app:", this.state.currentUser.name)
     return (
       <div>
       <ChatBar nameProp={this.state.currentUser.name} onSubmit={this.onSubmit} changeName={this.changeName}  changeName={this.changeName}/>
