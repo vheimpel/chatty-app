@@ -22,11 +22,11 @@ componentDidMount() {
 
   server.onmessage = this.onMessage
 
-  setTimeout(() => {
-    const newMessage = {id: 3, username: "Michelle", content: "Hello there!"};
-    const messages = this.state.messages.concat(newMessage)
-    this.setState({messages: messages})
-  }, 3000);
+  // setTimeout(() => {
+  //   const newMessage = {id: 3, username: "Michelle", content: "Hello there!"};
+  //   const messages = this.state.messages.concat(newMessage)
+  //   this.setState({messages: messages})
+  // }, 3000);
 }
 
 onMessage = (event) => {

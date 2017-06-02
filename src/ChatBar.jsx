@@ -26,7 +26,6 @@ _onKeyPress = (e) => {
 
 _onKeyPressName = (e) => {
   if(e.key === "Enter") {
-      // Construct a msg object containing the data the server needs to process the message from the chat client.
       var unam = {
         type: "postmessage",
         newUsername: this.state.username,
