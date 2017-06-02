@@ -31,6 +31,7 @@ componentDidMount() {
 
 onMessage = (event) => {
     var msg = JSON.parse(event.data);
+    console.log("MSG.number", msg.number)
     switch(msg.type) {
       case "message":
       var newMessage = {
@@ -39,8 +40,16 @@ onMessage = (event) => {
       }
       const messages = this.state.messages.concat(newMessage)
       this.setState({messages: messages})
+      break;
+      case "count":
+      this.setState({count: msg.number})
+      break;
     }
   }
+
+// counter = (event) => {
+//     var counter = JSON.parse(event.numberOfUsers);
+//   }
 
 onSubmit = (message) => {
   console.log("message from onSubmit in app.js:", message)
@@ -73,7 +82,7 @@ changeName = (unam) => {
     return (
       <div>
       <ChatBar nameProp={this.state.currentUser.name} onSubmit={this.onSubmit} changeName={this.changeName}  changeName={this.changeName}/>
-      <NavBar />
+      <NavBar userCountProp={this.state.count} />
       <MessageList messagesProp={this.state.messages} />
       </div>
     );
