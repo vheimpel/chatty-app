@@ -31,7 +31,6 @@ componentDidMount() {
 
 onMessage = (event) => {
     var msg = JSON.parse(event.data);
-
     switch(msg.type) {
       case "message":
       var newMessage = {
@@ -44,11 +43,11 @@ onMessage = (event) => {
   }
 
 onSubmit = (message) => {
-  console.log("message", message)
+  console.log("message from onSubmit in app.js:", message)
   this.setState({currentUser: {name: message.username}})
   const newMessage = {id: this.state.messages.length + 1, username: message.username, content: message.content};
-  const messages = this.state.messages.concat(newMessage)
-  this.setState({messages: messages})
+  // const messages = this.state.messages.concat(newMessage)
+  // this.setState({messages: messages})
   this.socket.send(JSON.stringify(message))
 }
 
