@@ -26,12 +26,15 @@ _onKeyPress = (e) => {
 
 _onKeyPressName = (e) => {
   if(e.key === "Enter") {
+    console.log("e.target.value from _onKeyPressName:", e.target.value)
+    console.log("this.state.username from _onKeyPressName:", this.state.username)
+    // console.log("unam.username before from onKeyPressName:", unam.username)
+
       var unam = {
         type: "postmessage",
         newUsername: this.state.username,
       };
-      // Send the msg object as a JSON-formatted string.
-      this.props.changeName(unam)
+        this.props.changeName(unam)
   }
 }
 
