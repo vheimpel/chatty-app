@@ -3,63 +3,87 @@
     @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700");
     @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css");
 
-    h1 {
-      color: tomato;
-    }
+    $navyBlue: #233d4d;
+    $orangeSlice: #fe7f2d;
+    $sunshine: #fcca46;
+    $lightGreen: #a1c181;
+    $blueGreen: #619b8a;
+
+    $logo-font: 'Text Me One', sans-serif;
+    $body-font: 'Jaldi', sans-serif;
+
+    // h1 {
+    //   color: $blueGreen;
+    // }
 
     body {
-      background: white;
-      color: black;
-      font-family: 'Open Sans', sans-serif;
+      // background: $sunshine;
+      font-family: $body-font;
       font-size: 14px;
       margin: 70px 0;
     }
 
+    html {
+      padding: 50px 120px;
+      color: $blueGreen;
+      font-family: $body-font;
+    }
+
+
     .chatbar {
-      background: tomato;
-      border-top: 1px solid black;
+      height: 150px;
+      background: $sunshine;
       bottom: 0;
       display: flex;
       left: 0;
-      padding: 5px;
+      padding: 5px 120px;
       position: fixed;
       right: 0;
+      font-family: $body-font;
+      font-size: 1.4em;
     }
 
     .chatbar-message,
     .chatbar-username {
-      border: 1px solid black;
+
       display: block;
       height: 40px;
       line-height: 40px;
-      margin: 5px;
-      padding: 0 9px;
+      padding: 2px 14px;
+      border: none;
+      border-radius: 25px;
+      margin-top: 15px;
     }
 
     .chatbar-message {
       flex: 8;
+      max-width: 400px;
     }
 
     .chatbar-username {
       flex: 2;
+      margin-right: 10px;
+      max-width: 200px;
     }
 
     .message {
       display: flex;
       flex-direction: column;
-      padding: 5px;
+      padding: 7px;
+
     }
 
     .message.system {
-      font-style: italic;
-      padding: 5px 20px;
+      // padding: 5px 20px;
+      font-size: 1.5em;
     }
 
     .message-content,
     .message-username {
       overflow: hidden;
-      margin: 5px;
-      padding: 0 10px;
+      // margin: 5px;
+      // padding: 0 10px;
+
     }
 
     .message-content {
@@ -72,24 +96,52 @@
     }
 
     .navbar {
-      background: tomato;
-      border-bottom: 1px solid black;
-      height: 60px;
+      background: $blueGreen;
+      height: 70px;
       left: 0;
-      padding: 0 10px;
-      position: fixed;
+      padding: 10px 120px;
+      position: absolute;
       right: 0;
       top: 0;
-    }
 
-    .navbar-brand {
-      color: inherit;
+      .navbar-brand {
+      color: $orangeSlice;
+      font-family: $logo-font;
+      font-size: 4em;
       display: block;
       float: left;
-      font-weight: 700;
-      font-size: 28px;
-      height: 60px;
-      line-height: 60px;
-      padding: 0 10px;
       text-decoration: none;
     }
+
+      .alert {
+        color: $lightGreen;
+        font-family: $body-font;
+        font-size: 1.3em;
+        display: inline-block;
+        margin: 0 10px;
+        position: absolute;
+        bottom: 25px;
+      }
+
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus,
+    button:focus {
+        outline: none;
+    }
+
+    textarea:focus, input:focus {
+        color: $blueGreen;
+    }
+
+    input, select, textarea{
+        color: $blueGreen;
+    }
+
+    textarea:focus, input:focus {
+        color: $blueGreen;
+    }
+
+
